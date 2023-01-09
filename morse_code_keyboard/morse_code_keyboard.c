@@ -39,6 +39,10 @@ struct MorseTreeNode* create_a_node(char value, char* lable) {
     return node;
 }
 
+// TODO: 
+//  - finish the tree
+//  - map keyboard code to eache node
+//  - add special characters, like enter, space, etc
 struct MorseTreeNode* build_morse_tree() {
     // root
     struct MorseTreeNode* root = create_a_node('\0', "Start");
@@ -178,11 +182,12 @@ int32_t morse_code_keyboard(void* p) {
                     break;
                 case InputKeyUp:
                 case InputKeyDown:
-                    // noop for ip and down keys
+                    // noop for ip and down keys 
                     break;
                 case InputKeyOk:
                     // send key to the keyboard
                     // reset the current symbol
+                    // todo: add real keyboard codes
                     furi_hal_hid_kb_press(0x14);
                     furi_hal_hid_kb_release(0x14);
                     app_context->model->current_symbol = app_context->model->tree_root;
