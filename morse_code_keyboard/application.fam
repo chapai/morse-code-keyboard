@@ -1,0 +1,11 @@
+App(
+    appid="morsecodeapp",
+    name="Morse Code Keyboard",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="morse_code_keyboard",
+    cdefines=["MORSE_CODE_KEYBOARD"],
+    requires=["gui"],
+    stack_size=1 * 1024,
+    icon="A_Plugins_14",
+    order=30,
+)
